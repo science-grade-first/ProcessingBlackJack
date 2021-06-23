@@ -15,11 +15,7 @@ class Hand{
     hand.add(newCard);
   }
   void resetHand(){
-    print("reseting hand");
      hand.clear();
-     for (Card card: hand){
-       print(card);
-     }
      }
 
   public boolean hasAce(){
@@ -65,6 +61,9 @@ class Hand{
       return false;
     }
   }
+  boolean isempty(){
+  return hand.isEmpty();
+  }
   public boolean checkBust(){
     //Check if need tto switch value of Ace to 1
     if (cardTotal()>21){
@@ -84,7 +83,7 @@ class Hand{
   }
   
   void display(int firstX,int firstY){
-    //print("in display");
+   //print("in display");
    int xCord = firstX;
    int yCord = firstY;
    int handSize = hand.size();
@@ -97,4 +96,7 @@ class Hand{
     xCord+= 125;
    }
   }
+
+ 
+  
 }

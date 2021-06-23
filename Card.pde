@@ -12,8 +12,11 @@
     this.value = value;
     this.isFaceUp = true;
     this.numValue = numValue;
-    faceDownCardImage = loadImage("Red_back.jpg");  
+    faceDownCardImage = loadImage("Red_back.jpg");
+    cardImage.resize(100, 153);
+    faceDownCardImage.resize(100, 153);
   }
+  
   public String getSuit(){
     return suit;
   }
@@ -26,6 +29,7 @@
   public void  setNumValue(int newNumValue){
     numValue = newNumValue;
   }
+  
   @Override
   public String toString(){
     if(!isFaceUp){
@@ -38,15 +42,16 @@
   public int getNumValue(){
       return numValue;
   }
-  void display(float xCord, float yCord){
-    //print("c display ");
-    if (isFaceUp){
-    cardImage.resize(100, 153);
-    image(cardImage,xCord,yCord);
-    }
-    else{
-      faceDownCardImage.resize(100, 153);
-    image(faceDownCardImage,xCord,yCord);
-    }
+  PImage getImage(){
+  return cardImage;
   }
+  void display(float xCord, float yCord){
+    if(!isFaceUp){
+ 
+      image(faceDownCardImage,xCord,yCord);
+    }
+    else{    
+      image(cardImage,xCord,yCord);
+    }
 }
+ }

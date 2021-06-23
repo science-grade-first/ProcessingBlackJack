@@ -1,7 +1,7 @@
 public class Player{
   private int money;
   private Hand hand;
-  private int betAmount;
+  private int betAmount; 
   
   public Player(){
     this.money= 0;
@@ -59,28 +59,6 @@ public class Player{
   public  int getMoney(){
     return money;
   }
-  void resolveTurn(Player dealer){
-    println("in resolve");
-    if (hand.checkBust()){
-      println("player busted");
-      loseBet();
-    }
-    else if(dealer.getHand().checkBust()){
-      println("dealer busted");
-      winBet();
-    }
-    else if(hand.amountOfCards()==5){
-      println("5 cards");
-      winBet();
-    }
-    else if(dealer.getHand().cardTotal()>hand.cardTotal()){
-      println("lost bet");
-      loseBet();
-    }
-    else if(dealer.getHand().cardTotal()<hand.cardTotal()){
-      println("won  bet");
-      winBet();
-    }
-}
+  
 
 }

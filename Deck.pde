@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
 PImage cardImage;
+int shuffleCounter;
  class Deck{
   private ArrayList<Card> deck;
   Deck(){
     resetDeck();
+    shuffleCounter = 0;
   }
   public void resetDeck(){
     String suits[] = new String[] { "Clubs","Spades","Hearts","Diamonds"};
@@ -41,8 +43,15 @@ PImage cardImage;
     }
   }
   public void shuffle(){
+    if (shuffleCounter ==5) {
+      resetDeck();
+    }
+    else{
+      shuffleCounter += 1;
+    }
     Collections.shuffle(deck);
-  }
+    }
+  
   public Card getTopCard(){
     Card topCard = deck.get(0);
     deck.remove(0);

@@ -73,6 +73,7 @@ class Table{
   }
   void runGame(){
       playerTakesTurn();
+      
       if (playerDone && !busted){
       dealerTakesTurn(dealer);
       resolveTurn();
@@ -80,6 +81,7 @@ class Table{
       resetGame();
       }
       else if ((playerDone && busted)){
+      
       resolveTurn();
       gameRunning = false;
       resetGame();
@@ -210,6 +212,9 @@ void playerTakesTurn(){
       showResults = true;
       player.winBet();
     }
+    else{
+      resultTB.setText("Previous Hand Result:\nTie");
+    }
 }
   
  
@@ -224,7 +229,8 @@ void playerTakesTurn(){
     stayed = true;
  }
  else if (doubleDown.overButton()){
-   
+   player.doubleDown();
+   }
  }
  else if (minusFiveBet.overButton()){
    if(playerBet>0 && !gameRunning){

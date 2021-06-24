@@ -230,6 +230,7 @@ void playerTakesTurn(){
  }
  else if (doubleDown.overButton()){
    player.doubleDown();
+   player.getHand().display(450,500);
    if(gameRunning &&  !player.getHand().orginalHand()){
    stayed = true;
    }

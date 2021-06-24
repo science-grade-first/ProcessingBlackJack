@@ -32,17 +32,14 @@ class Hand{
   }
   public int cardTotal(){
     int total = 0;
-    for (Card card: hand){
+     for (Card card: hand){
       total += card.getNumValue();
     }
-    if (total>21){
-      for (Card card: hand){
-        if (card.getValue().equals("Ace")){
-          card.setNumValue(1);
-          total -=10;
-        }
-      }
-    }
+    if (total>21 && hasAce()){
+         total -= 10;
+       }
+   
+    print(total);
     return total;
   }
   public void toggleFirstCard(){

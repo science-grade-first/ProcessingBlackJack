@@ -230,6 +230,8 @@ void playerTakesTurn(){
  }
  else if (doubleDown.overButton()){
    player.doubleDown();
+   if(gameRunning &&  !player.getHand().orginalHand()){
+   stayed = true;
    }
  }
  else if (minusFiveBet.overButton()){

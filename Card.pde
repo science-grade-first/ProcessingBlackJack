@@ -1,4 +1,4 @@
- class Card{
+class Card {
   private String suit;
   private String value;
   private boolean isFaceUp;
@@ -6,7 +6,7 @@
   PImage cardImage;
   PImage faceDownCardImage;
 
-  public Card(String suit, String value,int numValue, PImage image){
+  public Card(String suit, String value, int numValue, PImage image) {
     this.cardImage = image;
     this.suit  = suit;
     this.value = value;
@@ -16,42 +16,38 @@
     cardImage.resize(100, 153);
     faceDownCardImage.resize(100, 153);
   }
-  
-  public String getSuit(){
+  public String getSuit() {
     return suit;
   }
-  public String getValue(){
+  public String getValue() {
     return value;
   }
-  public void toggleIsFaceUp(){
+  public void toggleIsFaceUp() {
     isFaceUp = !isFaceUp;
   }
-  public void  setNumValue(int newNumValue){
+  public void  setNumValue(int newNumValue) {
     numValue = newNumValue;
   }
-  
+
   @Override
-  public String toString(){
-    if(!isFaceUp){
+    public String toString() {
+    if (!isFaceUp) {
       return "FACE DOWN";
-    }
-    else{
+    } else {
       return ("The " +value+ " of " + suit);
     }
   }
-  public int getNumValue(){
-      return numValue;
+  public int getNumValue() {
+    return numValue;
   }
-  PImage getImage(){
-  return cardImage;
+  PImage getImage() {
+    return cardImage;
   }
-  void display(float xCord, float yCord){
-    if(!isFaceUp){
- 
-      image(faceDownCardImage,xCord,yCord);
+  void display(float xCord, float yCord) {
+    if (!isFaceUp) {
+      image(faceDownCardImage, xCord, yCord);
+    } else {    
+      image(cardImage, xCord, yCord);
     }
-    else{    
-      image(cardImage,xCord,yCord);
-    }
+  }
 }
- }

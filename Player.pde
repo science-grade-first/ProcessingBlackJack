@@ -1,64 +1,58 @@
-public class Player{
+public class Player {
   private int money;
   private Hand hand;
   private int betAmount; 
-  
-  public Player(){
-    this.money= 0;
 
+  public Player() {
+    this.money= 0;
   }
-  public Player(int money){
+  public Player(int money) {
     this.money = money;
     this.hand = null;
     betAmount = 0;
   }
-  public void setHand(Hand hand){
+  public void setHand(Hand hand) {
     this.hand = hand;
   }
-  public void setBetAmount(int bet){
+  public void setBetAmount(int bet) {
     betAmount = bet;
   }
-  public boolean betAllowed(int bet){
-    if (bet>money){
+  public boolean betAllowed(int bet) {
+    if (bet>money) {
       return false;
-    }
-    else if (betAmount<0){
+    } else if (betAmount<0) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }
-  public int getBetAmount(){
+  public int getBetAmount() {
     return betAmount;
   }
-  public void hit(){
+  public void hit() {
     hand.addCard();
   }
-  public void doubleDown(){
-    if(hand.orginalHand() && (betAllowed(betAmount*2))) {
-       betAmount *= 2;
-       hand.addCard();
-      }
+  public void doubleDown() {
+    if (hand.orginalHand() && (betAllowed(betAmount*2))) {
+      betAmount *= 2;
+      hand.addCard();
     }
-  
-  public void winBet(){
+  }
+  public void winBet() {
     money += betAmount;
   }
-  public  void loseBet(){
+  public  void loseBet() {
     money -= betAmount;
   }
-  public void winBlackJack(){
+  public void winBlackJack() {
     money+= betAmount*1.5;
   }
-  public void  printBet(){
+  public void  printBet() {
   }
-  public Hand getHand(){
+  public Hand getHand() {
     return hand;
   }
-  public  int getMoney(){
+  public  int getMoney() {
     return money;
   }
-  
-
 }

@@ -7,7 +7,6 @@ DESCRIPTION:
 Welcome to my Blackjack Game!!!
 
 If you do not know how  to play blackjack learn with this link: https://bicyclecards.com/how-to-play/blackjack/
-
 House rules are written in the middle of table 
 
 You start off with $100 of money to play with. 
